@@ -119,83 +119,82 @@ class SignInScreen extends StatelessWidget {
                             hintStyle: TextStyle(color: Color(0xFF828282))),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     DefaultButton(
                       text: 'Register',
                       onTapped: () {},
                       color: AppColors.primaryColor,
                     ),
-                    
                   ],
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 2,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      'Or Login With',
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 2,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45,
+                  vertical: 35,
+                ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 2,
-                      width: 150,
-                      decoration: const BoxDecoration(
-                        color: AppColors.primaryColor,
+                    Image.asset('assets/icons/facebook logo.png'),
+                    Image.asset('assets/icons/Google logo.png'),
+                    Image.asset('assets/icons/twitter-6 logo.png'),
+                  ],
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(
+                  top: 120,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account',
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        'Or Login With',
-                        style: TextStyle(
-                          color: AppColors.whiteColor,
-                        ),
-                      ),
+                    SizedBox(
+                      width: 5,
                     ),
-                    Container(
-                      height: 2,
-                      width: 150,
-                      decoration: const BoxDecoration(
+                    Text(
+                      'Login?',
+                      style: TextStyle(
                         color: AppColors.primaryColor,
                       ),
                     ),
                   ],
                 ),
-                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 45,
-                    vertical: 35,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset('assets/icons/facebook logo.png'),
-                      Image.asset('assets/icons/Google logo.png'),
-                      Image.asset('assets/icons/twitter-6 logo.png'),
-                    ],
-                  ),
-                ),
-                const Padding(
-                  padding:  EdgeInsets.only(
-                    top: 120,
-                  ),
-                  child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Already have an account',
-                        style: TextStyle(
-                          color: AppColors.whiteColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Login?',
-                        style: TextStyle(
-                          color: AppColors.primaryColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              ),
             ],
           ),
         ),

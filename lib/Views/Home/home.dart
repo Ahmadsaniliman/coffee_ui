@@ -1,5 +1,6 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
 import 'package:coffee_shop_ui/Views/Home/home_data_model.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,10 +20,16 @@ class HomeScreen extends StatelessWidget {
     ];
     int indexOne = 0;
     return Scaffold(
-      bottomNavigationBar: Container(
-        height: 70,
-        width: double.infinity,
+      bottomNavigationBar: CurvedNavigationBar(
+        
+        backgroundColor: AppColors.primaryColor,
         color: AppColors.primaryColor,
+        items: [
+          Image.asset('assets/icons/home-3-line.png'),
+          Image.asset('assets/icons/shopping-cart-2-line.png'),
+          Image.asset('assets/icons/heart-line.png'),
+          Image.asset('assets/icons/user-line (1).png'),
+        ],
       ),
       body: Container(
         height: double.infinity,
@@ -143,7 +150,7 @@ class HomeScreen extends StatelessWidget {
                 //
                 const SizedBox(height: 15),
                 SizedBox(
-                  height: 450,
+                  height: 449,
                   width: double.infinity,
                   child: GridView(
                     gridDelegate:
@@ -164,11 +171,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           child: Stack(
                             children: [
-                              Positioned(
-                                top: 10,
-                                left: 30,
-                                child: Image.asset(homeData[index].image),
-                              ),
+                              Image.asset(homeData[index].image),
                               Positioned(
                                 top: 0,
                                 right: 0,

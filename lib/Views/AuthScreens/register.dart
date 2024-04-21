@@ -2,7 +2,6 @@ import 'package:coffee_shop_ui/Utils/app_colors.dart';
 import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -104,7 +103,9 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   child: DefaultButton(
                     onTapped: () {
-                        Navigator.of(context).pushNamed(AppRoutes.signInRoute,);
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.signInRoute,
+                      );
                     },
                     text: 'SignIn',
                     color: AppColors.primaryColor,
@@ -153,10 +154,10 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding:  EdgeInsets.only(
+                  padding: EdgeInsets.only(
                     top: 180,
                   ),
-                  child:  Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(

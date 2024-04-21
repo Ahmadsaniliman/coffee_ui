@@ -23,18 +23,18 @@ final homeData = [
     price: '\$18',
   ),
   HomeData(
-    image1: 'assets/icons/heart-fill.png',
-    image: 'assets/images/image 8 (1).png',
-    text1: 'Robusta',
-    text2: 'Lorem ipsum dolor\nsit amet cons ',
-    price: '\$20',
-  ),
-  HomeData(
     image1: 'assets/icons/heart-line.png',
-    image: 'assets/images/image 10 (1).png',
+    image: 'assets/images/image 6.png',
     text1: 'Excelsa',
     text2: 'Lorem ipsum dolor\nsit amet cons ',
     price: '\$15',
+  ),
+  HomeData(
+    image1: 'assets/icons/heart-fill.png',
+    image: 'assets/images/image 9 (1).png',
+    text1: 'Robusta',
+    text2: 'Lorem ipsum dolor\nsit amet cons ',
+    price: '\$20',
   ),
   HomeData(
     image1: 'assets/icons/heart-line.png',

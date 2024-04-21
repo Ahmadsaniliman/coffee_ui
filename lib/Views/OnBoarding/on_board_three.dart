@@ -117,7 +117,6 @@ class OnBoardingThreeScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
 
