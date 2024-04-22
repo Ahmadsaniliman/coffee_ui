@@ -21,14 +21,26 @@ class HomeScreen extends StatelessWidget {
     int indexOne = 0;
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        
         backgroundColor: AppColors.primaryColor,
         color: AppColors.primaryColor,
+        
         items: [
-          Image.asset('assets/icons/home-3-line.png'),
-          Image.asset('assets/icons/shopping-cart-2-line.png'),
-          Image.asset('assets/icons/heart-line.png'),
-          Image.asset('assets/icons/user-line (1).png'),
+          Image.asset(
+            'assets/icons/home-3-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/shopping-cart-2-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/heart-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/user-line (1).png',
+            color: AppColors.blackColor,
+          ),
         ],
       ),
       body: Container(
