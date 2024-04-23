@@ -1,6 +1,7 @@
 import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/AuthScreens/signin.dart';
 import 'package:coffee_shop_ui/Views/AuthScreens/register.dart';
+import 'package:coffee_shop_ui/Views/Home/cart.dart';
 import 'package:coffee_shop_ui/Views/Home/home.dart';
 import 'package:coffee_shop_ui/Views/Home/single_product.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_one.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const SplashOneSceen(),
+      home: const CartScreen(),
       routes: {
         AppRoutes.onboardingscreens: (context) => const OnBoardingScreens(),
         AppRoutes.onBoardOne: (context) => const OnBoardingOneScreen(),
