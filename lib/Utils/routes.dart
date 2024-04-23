@@ -5,4 +5,6 @@ class AppRoutes {
   static const onBoardThree = 'onboardthree';
   static const registerRoute = 'register';
   static const signInRoute = 'singin';
+  static const homeRoute = 'home';
+  static const singProuductRoute = 'singlepproduct';
 }

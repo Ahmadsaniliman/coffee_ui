@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/Home/home_data_model.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,6 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: AppColors.primaryColor,
         color: AppColors.primaryColor,
-        
         items: [
           Image.asset(
             'assets/icons/home-3-line.png',
@@ -175,57 +175,63 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       ...List.generate(
                         4,
-                        (index) => Container(
-                          padding: const EdgeInsets.all(17),
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Stack(
-                            children: [
-                              Image.asset(homeData[index].image),
-                              Positioned(
-                                top: 0,
-                                right: 0,
-                                child: Image.asset(
-                                  homeData[index].image1,
-                                ),
-                              ),
-                              Positioned(
-                                bottom: 30,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      homeData[index].text1,
-                                      style: const TextStyle(
-                                        color: AppColors.whiteColor,
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 50,
-                                    ),
-                                    Text(
-                                      homeData[index].price,
-                                      // ignore: prefer_const_constructors
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Positioned(
-                                bottom: 0,
-                                child: Text(
-                                  homeData[index].text2,
-                                  style: const TextStyle(
-                                    fontSize: 10,
+                        (index) => InkWell(
+                          onTap: () {
+                            Navigator.of(context)
+                                .pushNamed(AppRoutes.singProuductRoute);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(17),
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Stack(
+                              children: [
+                                Image.asset(homeData[index].image),
+                                Positioned(
+                                  top: 0,
+                                  right: 0,
+                                  child: Image.asset(
+                                    homeData[index].image1,
                                   ),
                                 ),
-                              ),
-                            ],
+                                Positioned(
+                                  bottom: 30,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        homeData[index].text1,
+                                        style: const TextStyle(
+                                          color: AppColors.whiteColor,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      Text(
+                                        homeData[index].price,
+                                        // ignore: prefer_const_constructors
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  child: Text(
+                                    homeData[index].text2,
+                                    style: const TextStyle(
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

@@ -93,7 +93,7 @@ class SingleProductScreen extends StatelessWidget {
                   //
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Coffeee Size',
                         style: TextStyle(
                           color: AppColors.whiteColor,
@@ -101,8 +101,88 @@ class SingleProductScreen extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      Row(
-                        children: [],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  height: 66,
+                                  width: 66,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primaryColor,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Image.asset(
+                                      'assets/icons/drinks-line.png'),
+                                ),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'Small',
+                                  style: TextStyle(
+                                    color: AppColors.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            //
+                            //
+                            Column(
+                              children: [
+                                Container(
+                                  height: 94,
+                                  width: 94,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primaryColor,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Image.asset(
+                                      'assets/icons/drinks-line (1).png'),
+                                ),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'Medium',
+                                  style: TextStyle(
+                                    color: AppColors.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            //
+                            //
+                            //
+                            Column(
+                              children: [
+                                Container(
+                                  height: 122,
+                                  width: 122,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primaryColor,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Image.asset(
+                                      'assets/icons/drinks-line (2).png'),
+                                ),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'Large',
+                                  style: TextStyle(
+                                    color: AppColors.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   )
