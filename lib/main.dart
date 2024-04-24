@@ -8,7 +8,6 @@ import 'package:coffee_shop_ui/Views/OnBoarding/on_board_one.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_two.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_boarding.dart';
-import 'package:coffee_shop_ui/Views/OnBoarding/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
