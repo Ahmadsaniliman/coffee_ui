@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
@@ -6,7 +7,49 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> data = [
+      {
+        'image': 'assets/images/Group 23.png',
+        'name': 'Robusta',
+        'with': 'with milk',
+        'price': '\$20',
+      },
+      {
+        'image': 'assets/images/image 10 (1).png',
+        'name': 'Liberica',
+        'with': 'With Water',
+        'price': '\$12',
+      },
+      {
+        'image': 'assets/images/image 14.png',
+        'name': 'Cirtus',
+        'with': 'With Lemon',
+        'price': '\$20',
+      },
+    ];
     return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: AppColors.primaryColor,
+        color: AppColors.primaryColor,
+        items: [
+          Image.asset(
+            'assets/icons/home-3-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/shopping-cart-2-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/heart-line.png',
+            color: AppColors.blackColor,
+          ),
+          Image.asset(
+            'assets/icons/user-line (1).png',
+            color: AppColors.blackColor,
+          ),
+        ],
+      ),
       backgroundColor: AppColors.dkBgColor,
       body: SafeArea(
         child: Padding(
@@ -82,6 +125,32 @@ class CartScreen extends StatelessWidget {
                   ...List.generate(
                     3,
                     (index) => Dismissible(
+                      confirmDismiss: (direction) {
+                        return showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text(
+                              'Remove from Cart?',
+                              style: TextStyle(
+                                color: AppColors.whiteColor,
+                              ),
+                            ),
+                            backgroundColor: AppColors.primaryColor,
+                            content: const Column(
+                              children: [
+                                Text(
+                                  textAlign: TextAlign.center,
+                                  'Lorem ipsum dolor sit amet consectetur. Vestibulum eget blandit mattis ',
+                                  style: TextStyle(
+                                    color: AppColors.blackColor,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                       key: UniqueKey(),
                       background: const Icon(
                         Icons.delete,
@@ -100,32 +169,32 @@ class CartScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Image.asset('assets/images/Group 23.png'),
+                                Image.asset(data[index]['image']!),
                                 const SizedBox(width: 20),
-                                const Padding(
-                                  padding: EdgeInsets.symmetric(
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
                                     vertical: 15,
                                   ),
                                   child: Column(
                                     children: [
                                       Text(
-                                        'Robusta',
-                                        style: TextStyle(
+                                        data[index]['name']!,
+                                        style: const TextStyle(
                                           color: AppColors.whiteColor,
                                           fontSize: 15,
                                         ),
                                       ),
                                       Text(
-                                        'with milk',
-                                        style: TextStyle(
+                                        data[index]['with']!,
+                                        style: const TextStyle(
                                           color: AppColors.whiteColor,
                                           fontSize: 10,
                                         ),
                                       ),
-                                      SizedBox(height: 4),
+                                      const SizedBox(height: 4),
                                       Text(
-                                        '\$20',
-                                        style: TextStyle(
+                                        data[index]['price']!,
+                                        style: const TextStyle(
                                           color: AppColors.blackColor,
                                         ),
                                       ),
@@ -134,7 +203,7 @@ class CartScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Container(
+                            SizedBox(
                               height: 32,
                               width: 105,
                               child: Row(
@@ -199,7 +268,7 @@ class CartScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: AppColors.primaryColor),
-                height: 174,
+                height: 175,
                 width: double.infinity,
                 child: Column(
                   children: [
@@ -251,27 +320,98 @@ class CartScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Sub total',
-                          style: TextStyle(
-                            color: AppColors.blackColor,
-                            fontWeight: FontWeight.bold,
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Sub total',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        
-                        Text(
-                          '\$44',
-                          style: TextStyle(
-                            color: AppColors.blackColor,
-                            fontWeight: FontWeight.bold,
+                          Text(
+                              's...................................................................'),
+                          Text(
+                            '\$44',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
-                    )
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Shipping',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                              's...................................................................'),
+                          Text(
+                            '\$6',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Total',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                              's.........................................................................'),
+                          Text(
+                            '\$50',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //
+                    //
+                    //
                   ],
+                ),
+              ),
+              const SizedBox(height: 40),
+              Container(
+                height: 59,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: AppColors.primaryColor),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Finalize Order',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: AppColors.whiteColor,
+                    ),
+                  ),
                 ),
               ),
             ],
