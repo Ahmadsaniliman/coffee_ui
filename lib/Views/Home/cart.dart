@@ -128,7 +128,7 @@ class CartScreen extends StatelessWidget {
                       confirmDismiss: (direction) {
                         return showDialog(
                           context: context,
-                          builder: (context) => AlertDialog(
+                          builder: (context) => const AlertDialog(
                             title: Text(
                               'Remove from Cart?',
                               style: TextStyle(
@@ -136,7 +136,7 @@ class CartScreen extends StatelessWidget {
                               ),
                             ),
                             backgroundColor: AppColors.primaryColor,
-                            content: const Column(
+                            content: Column(
                               children: [
                                 Text(
                                   textAlign: TextAlign.center,
