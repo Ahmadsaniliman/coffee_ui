@@ -2,8 +2,10 @@ import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/AuthScreens/signin.dart';
 import 'package:coffee_shop_ui/Views/AuthScreens/register.dart';
 import 'package:coffee_shop_ui/Views/Home/home.dart';
+import 'package:coffee_shop_ui/Views/Home/my_orders_page.dart';
+import 'package:coffee_shop_ui/Views/Home/profile.dart';
+import 'package:coffee_shop_ui/Views/Home/settings.dart';
 import 'package:coffee_shop_ui/Views/Home/single_product.dart';
-import 'package:coffee_shop_ui/Views/Home/track_order_screen.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_one.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_two.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const TrackOrderScreen(),
+      home: const SettingScreen(),
       routes: {
         AppRoutes.onboardingscreens: (context) => const OnBoardingScreens(),
         AppRoutes.onBoardOne: (context) => const OnBoardingOneScreen(),

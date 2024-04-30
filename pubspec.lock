@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  dialog_alert:
+    dependency: "direct main"
+    description:
+      name: dialog_alert
+      sha256: f3781247ac5621bb9f159fd4b4b3a8ecedc1ce804f86f50212d6154f44745c12
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -139,6 +147,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -147,6 +163,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      sha256: c8a055ee5ce3fd98d6fc872478b03823ffdb448699c6ebdbbc71d59b596fd48c
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -168,6 +192,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.1"
+  stepper_list_view:
+    dependency: "direct main"
+    description:
+      name: stepper_list_view
+      sha256: "2eeb592d6116bfcc7dc96a465a82376c821907367a7528b8b3caf50220fd8a19"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   stream_channel:
     dependency: transitive
     description:
@@ -217,4 +249,5 @@ packages:
     source: hosted
     version: "13.0.0"
 sdks:
-  dart: ">=3.2.0-0 <4.0.0"
+  dart: ">=3.2.0 <4.0.0"
+  flutter: ">=3.19.5"

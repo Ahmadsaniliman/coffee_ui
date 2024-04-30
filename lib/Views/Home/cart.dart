@@ -125,29 +125,25 @@ class CartScreen extends StatelessWidget {
                   ...List.generate(
                     3,
                     (index) => Dismissible(
-                      confirmDismiss: (direction) {
-                        return showDialog(
+                      confirmDismiss: (direction) async {
+                        return await showDialog(
                           context: context,
-                          builder: (context) => const AlertDialog(
-                            title: Text(
-                              'Remove from Cart?',
-                              style: TextStyle(
-                                color: AppColors.whiteColor,
+                          builder: (context) => AlertDialog(
+                            title: const Text('Hello'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text('no'),
                               ),
-                            ),
-                            backgroundColor: AppColors.primaryColor,
-                            content: Column(
-                              children: [
-                                Text(
-                                  textAlign: TextAlign.center,
-                                  'Lorem ipsum dolor sit amet consectetur. Vestibulum eget blandit mattis ',
-                                  style: TextStyle(
-                                    color: AppColors.blackColor,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(index);
+                                },
+                                child: const Text('Yes'),
+                              ),
+                            ],
                           ),
                         );
                       },
