@@ -62,12 +62,16 @@ class RegisterScreen extends StatelessWidget {
                           color: const Color(0xFF16181C),
                         ),
                         child: const TextField(
+                          style: TextStyle(color: AppColors.whiteColor),
                           decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 15),
-                              border: InputBorder.none,
-                              hintText: 'Full Name',
-                              hintStyle: TextStyle(color: Color(0xFF828282))),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 15),
+                            border: InputBorder.none,
+                            hintText: 'Full Name',
+                            hintStyle: TextStyle(
+                              color: Color(0xFF828282),
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -79,6 +83,7 @@ class RegisterScreen extends StatelessWidget {
                           color: const Color(0xFF16181C),
                         ),
                         child: const TextField(
+                          style: TextStyle(color: AppColors.whiteColor),
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(
                                   vertical: 20, horizontal: 15),
@@ -96,6 +101,7 @@ class RegisterScreen extends StatelessWidget {
                           color: const Color(0xFF16181C),
                         ),
                         child: const TextField(
+                          style: TextStyle(color: AppColors.whiteColor),
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(
                                   vertical: 20, horizontal: 15),
@@ -113,6 +119,7 @@ class RegisterScreen extends StatelessWidget {
                           color: const Color(0xFF16181C),
                         ),
                         child: const TextField(
+                          style: TextStyle(color: AppColors.whiteColor),
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 20, horizontal: 15),
@@ -128,7 +135,7 @@ class RegisterScreen extends StatelessWidget {
                       DefaultButton(
                         text: 'Register',
                         onTapped: () {
-                          Navigator.of(context).pushNamed(AppRoutes.homeRoute);
+                          Navigator.of(context).pushNamed(AppRoutes.signInRoute);
                         },
                         color: AppColors.primaryColor,
                       ),

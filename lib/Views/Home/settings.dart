@@ -25,22 +25,20 @@ class SettingScreen extends StatelessWidget {
                 left: 15,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(
                     Icons.arrow_back_ios,
                     color: AppColors.whiteColor,
                   ),
+                  SizedBox(width: 120),
                   Text(
-                    'My Orders',
+                    'Settings',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                       color: AppColors.whiteColor,
                     ),
                   ),
-                  SizedBox(),
-                  SizedBox(),
                 ],
               ),
             ),
@@ -93,35 +91,6 @@ class SettingScreen extends StatelessWidget {
                   ),
                   const Text(
                     'Password Manager',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                  const Icon(Icons.arrow_forward_ios),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-            child: SizedBox(
-              height: 74,
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 74,
-                    width: 74,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.primaryColor,
-                    ),
-                    child: Image.asset('assets/icons/Magnetic Card.png'),
-                  ),
-                  const Text(
-                    'Delete Account',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

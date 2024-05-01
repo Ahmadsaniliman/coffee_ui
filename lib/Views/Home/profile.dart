@@ -159,8 +159,7 @@ class PofileScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                           ),
                           child: Center(
-                            child:
-                                Image.asset('assets/icons/article-line.png'),
+                            child: Image.asset('assets/icons/article-line.png'),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -233,8 +232,8 @@ class PofileScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                           ),
                           child: Center(
-                            child:
-                                Image.asset('assets/icons/git-repository-private-line.png'),
+                            child: Image.asset(
+                                'assets/icons/git-repository-private-line.png'),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -270,8 +269,8 @@ class PofileScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                           ),
                           child: Center(
-                            child:
-                                Image.asset('assets/icons/user-add-line (1).png'),
+                            child: Image.asset(
+                                'assets/icons/user-add-line (1).png'),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -307,17 +306,75 @@ class PofileScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                           ),
                           child: Center(
-                            child:
-                                Image.asset('assets/icons/logout-box-r-line.png'),
+                            child: Image.asset(
+                                'assets/icons/logout-box-r-line.png'),
                           ),
                         ),
                         const SizedBox(width: 15),
-                        const Text(
-                          'LogOut',
-                          style: TextStyle(
-                            color: AppColors.whiteColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                        InkWell(
+                          onTap: () async {
+                            return await showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                backgroundColor: AppColors.primaryColor,
+                                title: const Text(
+                                  'Log Out',
+                                  style: TextStyle(
+                                    color: AppColors.whiteColor,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                content: const Text(
+                                  'Are you sure you want to logout?',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: AppColors.blackColor,
+                                  ),
+                                ),
+                                actions: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.bgColor,
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop(true);
+                                      },
+                                      child: const Text(
+                                        'Yes',
+                                        style: TextStyle(
+                                          color: AppColors.whiteColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('No'),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'LogOut',
+                            style: TextStyle(
+                              color: AppColors.whiteColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                       ],

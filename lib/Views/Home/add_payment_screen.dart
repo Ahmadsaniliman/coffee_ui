@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:flutter/material.dart';
 
@@ -20,17 +21,22 @@ class AddPaymentScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () {
+                    Navigator.of(context).pushNamed(AppRoutes.checkOutRoute);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 120,
                   ),
-                  Text(
-                    'CheckOut',
+                  const Text(
+                    'Add Card',
                     style: TextStyle(
                       color: AppColors.whiteColor,
                       fontWeight: FontWeight.bold,
@@ -304,7 +310,9 @@ class AddPaymentScreen extends StatelessWidget {
               DefaultButton(
                 text: 'ADD CARD',
                 color: AppColors.primaryColor,
-                onTapped: () {},
+                onTapped: () {
+                  Navigator.of(context).pushNamed(AppRoutes.paymentDoneRoute);
+                },
               ),
             ],
           ),

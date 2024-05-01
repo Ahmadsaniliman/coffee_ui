@@ -1,5 +1,7 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -21,20 +23,26 @@ class NotificationScreen extends StatelessWidget {
                 bottomRight: Radius.circular(15),
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.only(
+            child: Padding(
+              padding: const EdgeInsets.only(
                 top: 30,
                 left: 15,
                 right: 15,
               ),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(AppRoutes.trackOrderRoute);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
-                  SizedBox(width: 120),
-                  Text(
+                  const SizedBox(width: 120),
+                  const Text(
                     'Notification',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -72,13 +80,13 @@ class NotificationScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Container(
+            child: SizedBox(
               height: 260,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(
@@ -119,7 +127,7 @@ class NotificationScreen extends StatelessWidget {
                     width: double.infinity,
                     color: AppColors.lightBgColor,
                   ),
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(
@@ -160,7 +168,7 @@ class NotificationScreen extends StatelessWidget {
                     width: double.infinity,
                     color: AppColors.lightBgColor,
                   ),
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(
@@ -228,13 +236,13 @@ class NotificationScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Container(
+            child: SizedBox(
               height: 260,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(
@@ -275,7 +283,7 @@ class NotificationScreen extends StatelessWidget {
                     width: double.infinity,
                     color: AppColors.lightBgColor,
                   ),
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(
@@ -316,7 +324,7 @@ class NotificationScreen extends StatelessWidget {
                     width: double.infinity,
                     color: AppColors.lightBgColor,
                   ),
-                  Container(
+                  SizedBox(
                     height: 74,
                     width: double.infinity,
                     child: Row(

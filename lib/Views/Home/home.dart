@@ -1,11 +1,14 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/enum.dart';
 import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/Home/home_data_model.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,28 +24,8 @@ class HomeScreen extends StatelessWidget {
     ];
     int indexOne = 0;
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: AppColors.primaryColor,
-        color: AppColors.primaryColor,
-        items: [
-          Image.asset(
-            'assets/icons/home-3-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/shopping-cart-2-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/heart-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/user-line (1).png',
-            color: AppColors.blackColor,
-          ),
-        ],
-      ),
+      bottomNavigationBar:
+          const BotNavBar(selectedIndex: BottomNavBarItems.home),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -213,8 +196,7 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                       Text(
                                         homeData[index].price,
-                                        // ignore: prefer_const_constructors
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -243,6 +225,62 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class BotNavBar extends StatelessWidget {
+  const BotNavBar({
+    super.key,
+    required this.selectedIndex,
+  });
+
+  final BottomNavBarItems selectedIndex;
+  @override
+  Widget build(BuildContext context) {
+    return CurvedNavigationBar(
+      backgroundColor: AppColors.primaryColor,
+      buttonBackgroundColor: selectedIndex =
+          true ? AppColors.bgColor : AppColors.primaryColor,
+      color: AppColors.primaryColor,
+      items: [
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.homeRoute);
+          },
+          child: Image.asset(
+            'assets/icons/home-3-line.png',
+            color: AppColors.blackColor,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.cartRoue);
+          },
+          child: Image.asset(
+            'assets/icons/shopping-cart-2-line.png',
+            color: AppColors.blackColor,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.favouriteRoute);
+          },
+          child: Image.asset(
+            'assets/icons/heart-line.png',
+            color: AppColors.blackColor,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.profileRoute);
+          },
+          child: Image.asset(
+            'assets/icons/user-line (1).png',
+            color: AppColors.blackColor,
+          ),
+        ),
+      ],
     );
   }
 }

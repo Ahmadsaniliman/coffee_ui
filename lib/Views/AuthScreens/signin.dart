@@ -61,6 +61,7 @@ class SignInScreen extends StatelessWidget {
                             color: const Color(0xFF16181C),
                           ),
                           child: const TextField(
+                            style: TextStyle(color: AppColors.whiteColor),
                             decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 20, horizontal: 15),
@@ -78,6 +79,7 @@ class SignInScreen extends StatelessWidget {
                             color: const Color(0xFF16181C),
                           ),
                           child: const TextField(
+                            style: TextStyle(color: AppColors.whiteColor),
                             decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 20, horizontal: 15),

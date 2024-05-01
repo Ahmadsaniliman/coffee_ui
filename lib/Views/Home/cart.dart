@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -64,9 +65,15 @@ class CartScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(AppRoutes.singProuductRoute);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
                   const Text(
                     'Cart',
@@ -129,19 +136,53 @@ class CartScreen extends StatelessWidget {
                         return await showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                            title: const Text('Hello'),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text('no'),
+                            backgroundColor: AppColors.primaryColor,
+                            title: const Text(
+                              'Remove from Cart?',
+                              style: TextStyle(
+                                color: AppColors.whiteColor,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
                               ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop(index);
-                                },
-                                child: const Text('Yes'),
+                            ),
+                            content: const Text(
+                              'Lorem ipsum dolor sit amet consectetur. Vestibulum eget blandit mattis',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: AppColors.blackColor,
+                              ),
+                            ),
+                            actions: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  color: AppColors.bgColor,
+                                ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(true);
+                                  },
+                                  child: const Text(
+                                    'Yes',
+                                    style: TextStyle(
+                                      color: AppColors.whiteColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(),
+                                ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: const Text('No'),
+                                ),
                               ),
                             ],
                           ),
@@ -392,20 +433,25 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              Container(
-                height: 59,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: AppColors.primaryColor),
-                ),
-                child: const Center(
-                  child: Text(
-                    'Finalize Order',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: AppColors.whiteColor,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutes.checkOutRoute);
+                },
+                child: Container(
+                  height: 59,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: AppColors.primaryColor),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Finalize Order',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: AppColors.whiteColor,
+                      ),
                     ),
                   ),
                 ),

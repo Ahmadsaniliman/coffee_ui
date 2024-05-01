@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_list_view/stepper_list_view.dart';
@@ -45,16 +46,22 @@ class TrackOrderScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(AppRoutes.paymentDoneRoute);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 100,
                   ),
-                  Text(
+                  const Text(
                     'Track Order',
                     style: TextStyle(
                       color: AppColors.whiteColor,
@@ -151,7 +158,9 @@ class TrackOrderScreen extends StatelessWidget {
               ),
               DefaultButton(
                 text: 'Chat with rider',
-                onTapped: () {},
+                onTapped: () {
+                  Navigator.of(context).pushNamed(AppRoutes.notificationRoute);
+                },
                 color: AppColors.primaryColor,
               ),
             ],

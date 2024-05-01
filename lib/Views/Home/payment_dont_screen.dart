@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,14 @@ class PaymentDoneScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                Icons.arrow_back_ios,
-                color: AppColors.whiteColor,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutes.addPaymentRoute);
+                },
+                child: const Icon(
+                  Icons.arrow_back_ios,
+                  color: AppColors.whiteColor,
+                ),
               ),
               const Spacer(),
               Center(
@@ -59,7 +65,9 @@ class PaymentDoneScreen extends StatelessWidget {
               DefaultButton(
                 text: 'Track Order',
                 color: AppColors.primaryColor,
-                onTapped: () {},
+                onTapped: () {
+                  Navigator.of(context).pushNamed(AppRoutes.trackOrderRoute);
+                },
               ),
               const SizedBox(height: 20),
             ],

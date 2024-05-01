@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:coffee_shop_ui/Views/OnBoarding/on_board_three.dart';
 import 'package:flutter/material.dart';
 
@@ -19,16 +20,21 @@ class CheckOutScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.cartRoue);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 100,
                   ),
-                  Text(
+                  const Text(
                     'CheckOut',
                     style: TextStyle(
                       color: AppColors.whiteColor,
@@ -329,7 +335,9 @@ class CheckOutScreen extends StatelessWidget {
               DefaultButton(
                 text: 'Continue Payment',
                 color: AppColors.primaryColor,
-                onTapped: () {},
+                onTapped: () {
+                  Navigator.of(context).pushNamed(AppRoutes.addPaymentRoute);
+                },
               ),
             ],
           ),

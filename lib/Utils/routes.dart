@@ -7,4 +7,13 @@ class AppRoutes {
   static const signInRoute = 'singin';
   static const homeRoute = 'home';
   static const singProuductRoute = 'singlepproduct';
+  static const cartRoue = 'cartroute';
+  static const checkOutRoute = 'checkoutroute';
+  static const addPaymentRoute = 'addpaymentroute';
+  static const paymentDoneRoute = 'paymentdoneroute';
+  static const trackOrderRoute = 'trackorderroute';
+  static const favouriteRoute = 'favouriteroute';
+  static const notificationRoute = 'notificationroute';
+  static const profileRoute = 'profileroute';
+  static const myOrdersRoute = 'myorderroute';
 }

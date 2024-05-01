@@ -1,4 +1,5 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
+import 'package:coffee_shop_ui/Utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class SingleProductScreen extends StatelessWidget {
@@ -248,19 +249,25 @@ class SingleProductScreen extends StatelessWidget {
                             color: AppColors.whiteColor,
                           ),
                         ),
-                        Container(
-                          height: 60,
-                          width: 300,
-                          decoration: BoxDecoration(
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(AppRoutes.cartRoue);
+                          },
+                          child: Container(
+                            height: 60,
+                            width: 300,
+                            decoration: BoxDecoration(
                               color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: const Center(
-                            child: Text(
-                              'Add To Cart',
-                              style: TextStyle(
-                                color: AppColors.whiteColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Add To Cart',
+                                style: TextStyle(
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
@@ -281,8 +288,8 @@ class SingleProductScreen extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.only(
+            child:  Padding(
+              padding: const EdgeInsets.only(
                 bottom: 200,
                 left: 10,
                 right: 10,
@@ -290,18 +297,22 @@ class SingleProductScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: AppColors.whiteColor,
+                  InkWell( onTap : () {
+                    Navigator.of(context).pushNamed(AppRoutes.homeRoute);
+                  },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.whiteColor,
+                    ),
                   ),
-                  Text(
+                  const Text(
                     'Liberica Coffee',
                     style: TextStyle(
                       color: AppColors.whiteColor,
                       fontSize: 30,
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.favorite,
                     color: AppColors.whiteColor,
                   ),
