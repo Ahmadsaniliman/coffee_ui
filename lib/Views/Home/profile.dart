@@ -1,5 +1,6 @@
 import 'package:coffee_shop_ui/Utils/app_colors.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:coffee_shop_ui/Utils/enum.dart';
+import 'package:coffee_shop_ui/Views/Home/home.dart';
 
 import 'package:flutter/material.dart';
 
@@ -9,27 +10,8 @@ class PofileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: AppColors.primaryColor,
-        color: AppColors.primaryColor,
-        items: [
-          Image.asset(
-            'assets/icons/home-3-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/shopping-cart-2-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/heart-line.png',
-            color: AppColors.blackColor,
-          ),
-          Image.asset(
-            'assets/icons/user-line (1).png',
-            color: AppColors.blackColor,
-          ),
-        ],
+      bottomNavigationBar: const BottomNav(
+        selectedMenu: BottomNavBarItems.profile,
       ),
       backgroundColor: AppColors.bgColor,
       body: SafeArea(

@@ -24,8 +24,9 @@ class HomeScreen extends StatelessWidget {
     ];
     int indexOne = 0;
     return Scaffold(
-      bottomNavigationBar:
-          const BotNavBar(selectedIndex: BottomNavBarItems.home),
+      bottomNavigationBar: const BottomNav(
+        selectedMenu: BottomNavBarItems.home,
+      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -229,58 +230,111 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class BotNavBar extends StatelessWidget {
-  const BotNavBar({
-    super.key,
-    required this.selectedIndex,
-  });
+class BottomNav extends StatelessWidget {
+  const BottomNav({
+    Key? key,
+    required this.selectedMenu,
+  }) : super(key: key);
+  final BottomNavBarItems selectedMenu;
 
-  final BottomNavBarItems selectedIndex;
   @override
   Widget build(BuildContext context) {
-    return CurvedNavigationBar(
-      backgroundColor: AppColors.primaryColor,
-      buttonBackgroundColor: selectedIndex =
-          true ? AppColors.bgColor : AppColors.primaryColor,
-      color: AppColors.primaryColor,
-      items: [
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.homeRoute);
-          },
-          child: Image.asset(
-            'assets/icons/home-3-line.png',
-            color: AppColors.blackColor,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      height: 75,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: AppColors.primaryColor,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.homeRoute);
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: selectedMenu == BottomNavBarItems.home
+                    ? AppColors.bgColor
+                    : null,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(
+                'assets/icons/home-3-line.png',
+                color: selectedMenu == BottomNavBarItems.home
+                    ? AppColors.whiteColor
+                    : AppColors.blackColor,
+              ),
+            ),
           ),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.cartRoue);
-          },
-          child: Image.asset(
-            'assets/icons/shopping-cart-2-line.png',
-            color: AppColors.blackColor,
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.cartRoue);
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: selectedMenu == BottomNavBarItems.cart
+                    ? AppColors.bgColor
+                    : null,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(
+                'assets/icons/shopping-cart-2-line.png',
+                color: selectedMenu == BottomNavBarItems.cart
+                    ? AppColors.whiteColor
+                    : AppColors.blackColor,
+              ),
+            ),
           ),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.favouriteRoute);
-          },
-          child: Image.asset(
-            'assets/icons/heart-line.png',
-            color: AppColors.blackColor,
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.favouriteRoute);
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: selectedMenu == BottomNavBarItems.favourite
+                    ? AppColors.bgColor
+                    : null,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(
+                'assets/icons/heart-line.png',
+                color: selectedMenu == BottomNavBarItems.favourite
+                    ? AppColors.whiteColor
+                    : AppColors.blackColor,
+              ),
+            ),
           ),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.profileRoute);
-          },
-          child: Image.asset(
-            'assets/icons/user-line (1).png',
-            color: AppColors.blackColor,
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRoutes.profileRoute);
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: selectedMenu == BottomNavBarItems.profile
+                    ? AppColors.bgColor
+                    : null,
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset(
+                'assets/icons/user-line (1).png',
+                color: selectedMenu == BottomNavBarItems.profile
+                    ? AppColors.whiteColor
+                    : AppColors.blackColor,
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
